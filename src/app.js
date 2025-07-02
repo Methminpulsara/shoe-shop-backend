@@ -11,3 +11,10 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// app.use("/api", require("./routes"));
+
+sequelize.sync({alter:true}).then(()=>{
+    app.listen(process.env.PORT, () => {
+        console.log(`Server is running on port ${process.env.PORT}`);
+});
+})
