@@ -14,7 +14,12 @@ const Shoe = sequelize.define('Shoe', {
         allowNull :false
     },
     image : DataTypes.STRING,
-    stock : DataTypes.INTEGER 
+    stock : {
+        type :DataTypes.INTEGER,
+        defaultValue : 0, 
+    }
+}, {
+    timestamps : true,
 });
 
 module.exports = Shoe;
