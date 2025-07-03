@@ -7,7 +7,7 @@ exports.create = async (req , res)=>{
 }
 exports.getAll = async (req, res)=>{
     const shoes = await shoeService.getAll();
-    res.status(200).json(shoes);
+    res.status(201).json(shoes);
 }
 
 exports.getById = async (req, res)=>{
@@ -19,6 +19,6 @@ exports.update = async (req, res)=>{
     res.json(updated);
 } 
 exports.remove = async (req,res)=>{
-    await shoeService.remove(req,params.id)
+    await shoeService.remove(req.params.id)
     res.json({ message: "Shoe deleted" });
 } 
