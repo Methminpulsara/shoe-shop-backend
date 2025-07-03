@@ -4,7 +4,7 @@ exports.create = async (data)=>{
     return await Shoe.create(data);
 }
 
-expors.getAll = async () =>{
+exports.getAll = async () =>{
     return await Shoe.findAll();
 }
 
