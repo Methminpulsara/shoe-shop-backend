@@ -3,7 +3,7 @@ const shoeService = require('../services/shoeService')
 
 exports.create = async (req , res)=>{
     const shoe = await shoeService.create(req.body);
-    res.status(200).json(shoe);
+    res.status(201).json(shoe);
 }
 exports.getAll = async (req, res)=>{
     const shoes = await shoeService.getAll();
