@@ -6,11 +6,11 @@ const asyncHandler = require('../utils/asyncHandler')
 
 
 //admin Only can 
-router.post('/', protect , adminOnly, shoeController.create);
-router.delete('/:id', protect, adminOnly, shoeController.remove);
-router.put('/:id', protect, adminOnly, shoeController.update);
+router.post('/', protect , adminOnly, asyncHandler(shoeController.create));
+router.delete('/:id', protect, adminOnly, asyncHandler(shoeController.remove));
+router.put('/:id', protect, adminOnly, asyncHandler(shoeController.update));
 
-router.get('/', shoeController.getAll);
-router.get('/:id', shoeController.getById);
+router.get('/', asyncHandler(shoeController.getAll));
+router.get('/:id', asyncHandler(shoeController.getById));
 
 module.exports= router;
