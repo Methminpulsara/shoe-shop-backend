@@ -8,7 +8,7 @@ require("dotenv").config();
 const sequelize = require("./config/db");
 const shoeRouter = require('./routes/shoeRoute')
 
-
+const cart = require('./routes/cartRoute')
 
 
 
@@ -20,6 +20,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/api/auth' , require('./routes/auth.routes'))
 app.use('/api/shoe', shoeRouter);
+app.use('/api/cart',cart)
+
 
 sequelize.sync({alter:true})
 .then(()=>{
