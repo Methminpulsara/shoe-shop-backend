@@ -17,7 +17,11 @@ const Shoe = sequelize.define('Shoe', {
     stock : {
         type :DataTypes.INTEGER,
         defaultValue : 0, 
-    }
+    },
+    status : {
+        type :DataTypes.ENUM('active', 'inactive', 'deleted'),
+        defaultValue :'active'
+    },
 }, {
     timestamps : true,
 });

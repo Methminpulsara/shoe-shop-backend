@@ -1,10 +1,15 @@
+const errorhandeller =require ('./middlewares/errorHandler');
+
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 require("dotenv").config();
 const sequelize = require("./config/db");
-
 const shoeRouter = require('./routes/shoeRoute')
+
+
+
 
 
 const app = express();
@@ -25,3 +30,5 @@ sequelize.sync({alter:true})
 .catch((err) => {
     console.log(err);
 });
+
+app.use(errorhandeller);
