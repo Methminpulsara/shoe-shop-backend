@@ -6,6 +6,11 @@ const Shoe = sequelize.define('Shoe', {
         type :DataTypes.STRING,
         allowNull : false,
     },
+    type: {
+        type :DataTypes.ENUM('men', 'women','limited'),
+        allowNull : false,
+        }
+    ,
     description : {
         type :DataTypes.STRING,  
     },
