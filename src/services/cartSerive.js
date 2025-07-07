@@ -20,7 +20,7 @@ exports.getUserCart = async(userId)=>{
     return await Cart.findAll({
         where:{
             userId, status:"active",
-            include:["Shoe"]
+            // include:["Shoe"]
         }
     })
 }
