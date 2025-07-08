@@ -5,7 +5,7 @@ const { protect } = require('../middlewares/auth.middleware');
 const asyncHandler = require('../utils/asyncHandler');
 
 // 🔐 Protected Routes (only logged-in users)
-router.post('/', protect, asyncHandler(cartController.addToCart));          // ➕ Add item to cart
+router.post('/', protect, asyncHandler(cartController.addToCart));        
 router.get('/', protect, asyncHandler(cartController.getCart));             // 📦 Get all items in user's cart
 router.delete('/:id', protect, asyncHandler(cartController.removeItem));    // ❌ Remove specific cart item
 
