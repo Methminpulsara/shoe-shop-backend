@@ -4,7 +4,6 @@ const shoeController = require('../controllers/shoeController');
 const { protect, adminOnly } = require("../middlewares/auth.middleware");
 const asyncHandler = require('../utils/asyncHandler')
 
-
 //admin Only can 
 router.post('/', protect , adminOnly, asyncHandler(shoeController.create));
 router.delete('/:id', protect, adminOnly, asyncHandler(shoeController.remove));

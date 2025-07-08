@@ -11,7 +11,6 @@ const Order = sequelize.define("Order", {
   },
 });
 
-
 Order.belongsTo(User);
 User.hasMany(Order)
 
