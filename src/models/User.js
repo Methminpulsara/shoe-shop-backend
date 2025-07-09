@@ -20,7 +20,6 @@ const User = sequelize.define('user', {
         type : DataTypes.ENUM('admin', 'user'),
          defaultValue:'user'
     }
-
 })
 
 module.exports = User
