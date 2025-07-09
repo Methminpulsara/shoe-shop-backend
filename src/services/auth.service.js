@@ -19,12 +19,10 @@ exports.logingUser = async({ email, password }) =>{
     if(!user){
         throw new Error ('Invalid email or password');
     }
-
     const match = await bcrypt.compare(password, user.password);
     if(!match){
         throw new Error ('Invalid email or password');
     }
-
     const token = Jwt.sign({id:user.id, role :user.role}, process.env.JWT_SECRET, {expiresIn: '1h'});
     return {token};
 }
