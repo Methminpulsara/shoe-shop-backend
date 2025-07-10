@@ -29,5 +29,6 @@ const Shoe = sequelize.define('Shoe', {
     },
 }, {
     timestamps : true,
-});
+    }
+);
 module.exports = Shoe;
