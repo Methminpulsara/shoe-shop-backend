@@ -10,6 +10,7 @@ const OrderDetail = sequelize.define("OrderDetail", {
   subTotal: DataTypes.FLOAT,
 });
 
+
 OrderDetail.belongsTo(Order);
 Order.hasMany(OrderDetail);
 
